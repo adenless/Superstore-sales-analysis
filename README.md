@@ -1,10 +1,10 @@
 # Superstore Sales Performance Analysis
 
-End-to-end data analysis project using **PostgreSQL, Python, and Power BI** to evaluate revenue growth, profitability trends, customer concentration, and the impact of discounting.
+End-to-end business analysis project using **PostgreSQL, Python, and Power BI** to evaluate revenue growth, profitability trends, customer concentration, and the impact of discounting.
 
-This project simulates a real-world junior data analyst workflow:
+This project demonstrates a full analytical workflow:
 
-Raw Data → SQL Validation → Python Analysis → Business Insights → Dashboard Reporting
+Raw Data → SQL Validation → Python Analysis → Business Insights → Executive Dashboard
 
 ---
 
@@ -21,6 +21,29 @@ Raw Data → SQL Validation → Python Analysis → Business Insights → Dashbo
 
 ---
 
+# Data Preparation
+
+The raw CSV dataset was imported into PostgreSQL and cleaned before analysis.
+
+Data preparation steps:
+
+- Imported dataset into PostgreSQL
+    
+- Resolved encoding issues during import
+    
+- Converted date fields to proper DATE format
+    
+- Converted Sales, Profit, Discount, and Quantity to numeric types
+    
+- Validated totals after transformation
+    
+- Ensured correct data types inside Power BI
+    
+
+Proper data typing ensured accurate aggregations, calculations, and reporting consistency across SQL, Python, and Power BI.
+
+---
+
 # SQL Analysis
 
 SQL was used to validate the dataset and answer core business questions through aggregation and grouping.
@@ -29,33 +52,37 @@ SQL was used to validate the dataset and answer core business questions through 
 
 ![Total Sales, Profit and Quantity](screenshots/01_total_performance.png)
 
-Validated overall business performance and confirmed data integrity after import.
+This query validated overall business performance and confirmed data integrity after import.
 
 ---
 
 ## 2. Which Region Performs Best?
-![Total Sales, Profit and Quantity](screenshots/02_region_analysis.png)
+
+![Region Performance](screenshots/02_region_analysis.png)
 
 Identified the highest-performing geographic region based on total sales.
 
 ---
 
 ## 3. Which Category Makes the Most Money?
-![Total Sales, Profit and Quantity](screenshots/03_category_profit.png)
+
+![Category Profit](screenshots/03_category_profit.png)
 
 Determined which product category generates the highest total profit.
 
 ---
 
 ## 4. Are Discounts Hurting Profit?
-![Total Sales, Profit and Quantity](screenshots/04_discount_impact.png)
 
-Evaluated the relationship between discount levels and profitability.
+![Discount Impact](screenshots/04_discount_impact.png)
+
+Analyzed the relationship between discount levels and profitability.
 
 ---
 
 ## 5. Who Are the Top 10 Customers?
-![Total Sales, Profit and Quantity](screenshots/05_top_customers.png)
+
+![Top Customers](screenshots/05_top_customers.png)
 
 Identified the highest revenue-generating customers.
 
@@ -63,7 +90,7 @@ Identified the highest revenue-generating customers.
 
 # Python Analysis & Visualization
 
-Python was used for trend analysis, growth comparison, margin efficiency, and deeper exploratory insights.
+Python was used for trend analysis, growth comparison, efficiency measurement, and exploratory data analysis.
 
 ---
 
@@ -71,7 +98,7 @@ Python was used for trend analysis, growth comparison, margin efficiency, and de
 
 ![Monthly Sales and Profit Trend](screenshots/image1.png)
 
-Sales show a consistent upward trend across years. Profit generally follows revenue growth, though with higher volatility.
+Sales show a consistent upward trend over time. Profit follows revenue growth but displays higher volatility.
 
 ---
 
@@ -79,7 +106,7 @@ Sales show a consistent upward trend across years. Profit generally follows reve
 
 ![Sales vs Profit Growth](screenshots/image2.png)
 
-Profit growth broadly aligns with sales growth, though certain periods show margin compression.
+Profit growth generally aligns with sales growth, though certain periods indicate margin compression.
 
 ---
 
@@ -87,7 +114,7 @@ Profit growth broadly aligns with sales growth, though certain periods show marg
 
 ![Profit Margin by Category](screenshots/image5.png)
 
-Technology demonstrates the strongest profitability efficiency relative to revenue.
+Technology demonstrates the strongest profitability relative to revenue, indicating higher operational efficiency.
 
 ---
 
@@ -95,7 +122,7 @@ Technology demonstrates the strongest profitability efficiency relative to reven
 
 ![Discount vs Profit](screenshots/image3.png)
 
-Higher discount levels are associated with declining profit and increased likelihood of losses.
+Higher discount levels correlate with reduced profit and increased probability of losses.
 
 ---
 
@@ -103,58 +130,71 @@ Higher discount levels are associated with declining profit and increased likeli
 
 ![Customer Revenue Concentration](screenshots/image4.png)
 
-Revenue is partially concentrated among a small group of high-value customers.
+A small group of customers contributes a significant share of total revenue, indicating partial revenue concentration.
 
 ---
 
 # Power BI Dashboard
 
-An interactive dashboard was developed in Power BI to present executive-level insights.
+The dataset was imported into Power BI to create an interactive executive dashboard.
 
-The dashboard includes:
+Data types were validated and corrected inside the Power BI model.
 
-- Total Sales, Profit, and Profit Margin KPIs
+Key DAX Measures created:
+
+- Total Sales = SUM(Sales)
     
-- Monthly Revenue & Profit Trends
+- Total Profit = SUM(Profit)
     
-- Sales by Region
+- Total Quantity = SUM(Quantity)
     
-- Profit by Category
-    
-- Discount Impact Analysis
-    
-- Top Customer Breakdown
+- Average Order Value = DIVIDE([Total Sales], DISTINCTCOUNT(Order ID))
     
 
-[Insert Image – Power BI Dashboard Overview]
+---
 
-The dashboard enables interactive filtering by region, category, and time period.
+## Sales Performance Dashboard
+
+![Sales Dashboard](screenshots/dashboard1.png)
+
+This dashboard includes:
+
+- KPI cards (Total Sales, Total Profit, Orders, Average Order Value)
+    
+- Monthly sales trend
+    
+- Top 10 products by sales
+    
+- Sales by region
+    
+- Interactive slicers (Region, Category, Year)
+    
+
+---
+
+## Product & Profit Analysis
+
+![Product and Profit Dashboard](screenshots/dashboard2.png)
+
+This dashboard includes:
+
+- Sales vs Profit by category
+    
+- Impact of discount on profitability
+    
+- Geographic sales distribution
+    
 
 ---
 
 # Key Insights
 
-- Revenue demonstrates consistent growth over time.
+- Revenue demonstrates consistent year-over-year growth.
     
 - Profit growth follows revenue but is sensitive to discount levels.
     
 - Technology is the most profitable category.
     
-- Excessive discounting significantly impacts margin performance.
+- High discount levels significantly reduce margin performance.
     
-- Revenue concentration exists among top customers.
-    
-
----
-
-# Project Outcome
-
-This project demonstrates:
-
-- SQL data validation and aggregation
-    
-- Python-based analytical reasoning
-    
-- Visualization of business metrics
-    
-- Executive-level dashboard reporting
+- Revenue is partially concentrated among top customers.
