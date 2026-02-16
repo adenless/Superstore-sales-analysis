@@ -52,7 +52,7 @@ SQL was used to validate the dataset and answer core business questions through 
 
 ![Total Sales, Profit and Quantity](screenshots/01_total_performance.png)
 
-This query validated overall business performance and confirmed data integrity after import.
+This query aggregates total sales (€2.30M), total profit (€286K), and total quantity sold (37,873 units). These metrics provide a high-level performance overview and serve as baseline KPIs for further regional, category, and customer-level analysis.
 
 ---
 
@@ -60,7 +60,7 @@ This query validated overall business performance and confirmed data integrity a
 
 ![Region Performance](screenshots/02_region_analysis.png)
 
-Identified the highest-performing geographic region based on total sales.
+This query aggregates total sales and profit by region to evaluate geographic performance. The West region generated the highest revenue (€725K) and profit (€108K), followed by the East region. The South region showed the lowest overall performance, indicating potential opportunities for growth or operational improvement.
 
 ---
 
@@ -68,7 +68,7 @@ Identified the highest-performing geographic region based on total sales.
 
 ![Category Profit](screenshots/03_category_profit.png)
 
-Determined which product category generates the highest total profit.
+This query aggregates total sales and profit by product category to evaluate profitability performance. Technology generated the highest total profit (€145K) and revenue (€836K), followed by Office Supplies. Furniture produced strong revenue but significantly lower profit (€18K), indicating lower margins and potential pricing or cost structure issues.
 
 ---
 
@@ -76,7 +76,7 @@ Determined which product category generates the highest total profit.
 
 ![Discount Impact](screenshots/04_discount_impact.png)
 
-Analyzed the relationship between discount levels and profitability.
+This query evaluates the impact of discount levels on average profit per order. Results show that profitability declines significantly as discounts increase. While low discounts (0–10%) maintain positive average profit, discounts above 30% lead to negative average profit, indicating that aggressive discounting directly erodes margins.
 
 ---
 
@@ -84,7 +84,7 @@ Analyzed the relationship between discount levels and profitability.
 
 ![Top Customers](screenshots/05_top_customers.png)
 
-Identified the highest revenue-generating customers.
+This query identifies the top 10 customers ranked by total revenue contribution. The results highlight a small group of high-value customers who generate a disproportionately large share of total sales, indicating revenue concentration among key accounts.
 
 ---
 
@@ -98,7 +98,7 @@ Python was used for trend analysis, growth comparison, efficiency measurement, a
 
 ![Monthly Sales and Profit Trend](screenshots/image1.png)
 
-Sales show a consistent upward trend over time. Profit follows revenue growth but displays higher volatility.
+Monthly sales demonstrate a clear upward trend, indicating overall business growth over time. Profit also increases alongside revenue but exhibits greater volatility, suggesting margin sensitivity and cost fluctuations across periods.
 
 ---
 
@@ -106,7 +106,7 @@ Sales show a consistent upward trend over time. Profit follows revenue growth bu
 
 ![Sales vs Profit Growth](screenshots/image2.png)
 
-Profit growth generally aligns with sales growth, though certain periods indicate margin compression.
+While profit growth generally follows revenue growth, the higher volatility in profit suggests that margins are sensitive to operational factors such as discounting and cost structure. This indicates that revenue growth does not consistently translate into proportional profitability gains.
 
 ---
 
@@ -114,7 +114,7 @@ Profit growth generally aligns with sales growth, though certain periods indicat
 
 ![Profit Margin by Category](screenshots/image5.png)
 
-Technology demonstrates the strongest profitability relative to revenue, indicating higher operational efficiency.
+Technology and Office Supplies maintain strong profit margins, demonstrating efficient revenue conversion. However, Furniture underperforms significantly in margin terms, indicating structural profitability challenges that may require pricing or cost optimization strategies.
 
 ---
 
@@ -122,7 +122,7 @@ Technology demonstrates the strongest profitability relative to revenue, indicat
 
 ![Discount vs Profit](screenshots/image3.png)
 
-Higher discount levels correlate with reduced profit and increased probability of losses.
+There is a strong negative correlation between discount depth and profit. Orders with high discount levels (40%+) consistently generate lower margins and often result in losses, indicating aggressive discounting erodes profitability and may require pricing optimization.
 
 ---
 
@@ -130,7 +130,7 @@ Higher discount levels correlate with reduced profit and increased probability o
 
 ![Customer Revenue Concentration](screenshots/image4.png)
 
-A small group of customers contributes a significant share of total revenue, indicating partial revenue concentration.
+The analysis indicates revenue concentration among a limited number of high-value customers. While the business benefits from strong key accounts, reliance on a small customer segment may expose the company to revenue volatility if those relationships decline.
 
 ---
 
@@ -189,12 +189,14 @@ This dashboard includes:
 
 # Key Insights
 
-- Revenue demonstrates consistent year-over-year growth.
+- **Revenue Growth:** The business shows a clear upward trend in total sales over time, indicating sustained demand and overall expansion.
     
-- Profit growth follows revenue but is sensitive to discount levels.
+- **Profit Volatility:** While revenue is growing, profit does not increase at the same rate. Periods of margin compression suggest operational or pricing inefficiencies.
     
-- Technology is the most profitable category.
+- **Regional Performance:** The West region leads in both sales and profitability, while other regions present optimization opportunities.
     
-- High discount levels significantly reduce margin performance.
+- **Category Efficiency:** Technology delivers the highest profit margin, demonstrating strong operational efficiency. Furniture, despite solid sales, generates significantly lower margins.
     
-- Revenue is partially concentrated among top customers.
+- **Discount Impact:** Higher discount levels strongly correlate with reduced profitability. Aggressive discounting frequently results in margin erosion and, in some cases, losses.
+    
+- **Customer Concentration:** A small group of top customers contributes a notable share of revenue, introducing moderate revenue concentration risk.
